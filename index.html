@@ -9,14 +9,78 @@
         "Peugeot", "Porsche", "Toyota",
         "Volkswagen");
 
-    var tabQuebec = new Array("Montréal, Laval, Sherbrooke");
-    var tabOntario = new Array("Ottawa", "Toronto", "Niagara Falls");
-    var tabColombie_Britannique = new Array("Vancouver", "Victoria", "Tofino");
+    var tabQuebec = new Array("Québec", "Montréal", "Laval", "Sherbrooke");
+    var tabOntario = new Array("Ontario", "Ottawa", "Toronto", "Niagara Falls");
+    var tabColombie_Britannique = new Array("Colombie-Britannique", "Vancouver", "Victoria", "Tofino");
     
     var tab2 = new Array(tabQuebec, tabOntario, tabColombie_Britannique);
 
     function chargerProvinces(){
         var taille = tab2.length;
+        var elem = document.getElementById("provinces");
+        
+        var choixProvince = "Québec";
+        for (i = 0;i < taille;i++){
+            elem.options[i] = new Option(tab2[i][0]);
+            if (elem.options[i].text == choixProvince){
+                elem.options[i].selected = true;
+            }
+        }
+    }
+
+    function chargerVilles(){
+        
+        var taille = tab2.length;
+        var provinces = document.getElementById("provinces");
+        var province;
+        for (i = 0;i < taille; i++){
+            if (provinces.options[i].selected == true){
+                province = provinces.options[i].text;
+            }
+        }
+        var villeContainer = document.getElementById("listeVilles");
+       
+        switch(province){
+            case "Québec":
+            taille = tabQuebec.length;
+            var elem = document.getElementById("villes");
+            var choixVille = "Montréal";
+            for (i = 1;i < taille;i++){
+                elem.options[i - 1] = new Option(tabQuebec[i]);
+                if (elem.options[i - 1].text == choixVille){
+                    elem.options[i - 1].selected = true;
+                }
+            }
+            villeContainer.style.visibility = "visible";
+            break;
+            case "Ontario":
+            taille = tabOntario.length;
+            var elem = document.getElementById("villes");
+            var choixVille = "Ottawa";
+            for (i = 1;i < taille;i++){
+                elem.options[i - 1] = new Option(tabOntario[i]);
+                if (elem.options[i - 1].text == choixVille){
+                    elem.options[i - 1].selected = true;
+                }
+            }
+            villeContainer.style.visibility = "visible";
+            break;
+            case "Colombie-Britannique":
+            taille = tabQuebec.length;
+            var elem = document.getElementById("villes");
+            var choixVille = "Vancouver";
+            for (i = 1;i < taille;i++){
+                elem.options[i - 1] = new Option(tabColombie_Britannique[i]);
+                if (elem.options[i - 1].text == choixVille){
+                    elem.options[i - 1].selected = true;
+                }
+            }
+            villeContainer.style.visibility = "visible";
+
+            break;
+            default:;
+        }
+
     }
 
     function chargerVoitures() {
@@ -41,7 +105,7 @@
         }
     }
     </SCRIPT>
-    <BODY onLoad="chargerVoitures()">
+    <BODY onLoad="chargerVoitures(), chargerProvinces()">
         <form id="listeVoitures" name="listeVoitures" action="" method="">
 
           <label for="voitures">Choisissez une voiture</label>
@@ -49,7 +113,11 @@
         </form>
         <div id="listeProvinces">
             <label>Choisissez une province</label>
-            <select ></select>
+            <select id="provinces" name="provinces" onChange="chargerVilles()"></select>
+        </div>
+        <div id="listeVilles" style="visibility: collapse">
+            <label>Choisissez une ville</label>
+            <select id="villes" name="villes"></select>
         </div>
     </BODY>
     </HTML> 
