@@ -1,0 +1,55 @@
+<HTML>
+    <HEAD>
+     <TITLE>Voitures</TITLE>
+    </HEAD>
+    <SCRIPT LANGUAGE="JavaScript">
+    var tab = new Array(
+        "Audi", "BMW", "Cadillac", "Citroën", 
+        "Honda", "Infiniti", "Lexus", "Mercedes", 
+        "Peugeot", "Porsche", "Toyota",
+        "Volkswagen");
+
+    var tabQuebec = new Array("Montréal, Laval, Sherbrooke");
+    var tabOntario = new Array("Ottawa", "Toronto", "Niagara Falls");
+    var tabColombie_Britannique = new Array("Vancouver", "Victoria", "Tofino");
+    
+    var tab2 = new Array(tabQuebec, tabOntario, tabColombie_Britannique);
+
+    function chargerProvinces(){
+        var taille = tab2.length;
+    }
+
+    function chargerVoitures() {
+        var taille = tab.length;
+        var elem = document.getElementById("voitures");
+        var choixSelection = "Audi";
+        for (i = 0;i < taille; i++){
+            elem.options[i] = new Option(tab[i]);
+            if (elem.options[i].text == choixSelection){
+                elem.options[i].selected = true;
+            }
+        }
+    }
+
+    function choix(elem){
+        var nbVoitures = elem.voitures.options.length;
+        choixVoitures = elem.voitures;
+        for (i = 0;i < nbVoitures;i++){
+            if (choixVoitures.options[i].selected){
+                return choixVoitures.options[i].text;
+            }
+        }
+    }
+    </SCRIPT>
+    <BODY onLoad="chargerVoitures()">
+        <form id="listeVoitures" name="listeVoitures" action="" method="">
+
+          <label for="voitures">Choisissez une voiture</label>
+            <select id="voitures" name="voitures" onChange="alert(choix(document.listeVoitures));"></select>
+        </form>
+        <div id="listeProvinces">
+            <label>Choisissez une province</label>
+            <select ></select>
+        </div>
+    </BODY>
+    </HTML> 
