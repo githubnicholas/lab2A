@@ -15,7 +15,7 @@
     <script defer src="node_modules/getmdl-select/getmdl-select.min.js"></script>
 </head>
 
-<body>
+<body onLoad="chargerPlats()">
     <!-- Uses a transparent header that draws on top of the layout's background -->
     <style>
         .demo-layout-transparent {
@@ -62,20 +62,17 @@
                 <div class="mdl-cell mdl-cell--4-col">
                     <!-- Image card -->
 
-                    <div id="selectdiv" class="demo-card-image mdl-card mdl-shadow--2dp">
+                    <div id="selectdiv1" class="demo-card-image mdl-card mdl-shadow--2dp">
                         <div class="mdl-card__title mdl-card--expand"></div>
                         <div class="mdl-card__actions">
                             <!-- Select with floating label and arrow -->
                             <div
                                 class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select opaque">
-                                <input type="text" value="" class="mdl-textfield__input" id="sample4" readonly>
+                                <input type="text" value="" class="mdl-textfield__input" id="sample4" onChange="chargerImage()" readonly>
                                 <input type="hidden" value="" name="sample4">
                                 <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
                                 <label for="sample4" class="mdl-textfield__label">Entrée</label>
-                                <ul for="sample4" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                    <li class="mdl-menu__item" data-val="DEU">Germany</li>
-                                    <li class="mdl-menu__item" data-val="BLR">Belarus</li>
-                                    <li class="mdl-menu__item" data-val="RUS">Russia</li>
+                                <ul id="entrees" for="sample4" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
                                 </ul>
                             </div>
                         </div>
@@ -114,20 +111,18 @@
                     </table>
                 </div>
                 <div class="mdl-cell mdl-cell--4-col">
-                    <div id="selectdiv" class="demo-card-image mdl-card mdl-shadow--2dp">
+                    <div id="selectdiv2" class="demo-card-image mdl-card mdl-shadow--2dp">
                         <div class="mdl-card__title mdl-card--expand"></div>
                         <div class="mdl-card__actions">
                             <!-- Select with floating label and arrow -->
                             <div
                                 class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select opaque">
-                                <input type="text" value="" class="mdl-textfield__input" id="sample4" readonly>
-                                <input type="hidden" value="" name="sample4">
+                                <input type="text" value="" class="mdl-textfield__input" id="sample5" readonly>
+                                <input type="hidden" value="" name="sample5">
                                 <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                                <label for="sample4" class="mdl-textfield__label">Repas</label>
-                                <ul for="sample4" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                    <li class="mdl-menu__item" data-val="DEU">Germany</li>
-                                    <li class="mdl-menu__item" data-val="BLR">Belarus</li>
-                                    <li class="mdl-menu__item" data-val="RUS">Russia</li>
+                                <label for="sample5" class="mdl-textfield__label">Repas</label>
+                                <ul for="sample5" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                    <li class="mdl-menu__item" data-val=""></li>
                                 </ul>
                             </div>
                         </div>
