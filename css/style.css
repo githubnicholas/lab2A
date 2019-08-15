@@ -7,11 +7,13 @@
             }
 
             #selectdiv1 {
-                background: url('../images/soup.jpg') center / cover;
+                background: url('../images/entrees.jpg') center / cover;
+                z-index:1;
             }
 
             #selectdiv2 {
-                background: url('../images/spaghetti.jpg') center / cover;
+                background: url('../images/burger.jpg') center / cover;
+                z-index:0;
             }
 
             .demo-card-image > .mdl-card__actions {
