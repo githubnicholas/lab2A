@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="fr">
 
 <head>
@@ -8,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/javascript.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/getmdl-select/getmdl-select.min.css">
@@ -16,30 +15,10 @@
 </head>
 
 <body onLoad="chargerPlats()">
-    <!-- Uses a transparent header that draws on top of the layout's background -->
-    <style>
-        .demo-layout-transparent {
-            background: url('images/kitchen.jpg') center / cover;
-        }
-
-        .demo-layout-transparent .mdl-layout__header,
-        .demo-layout-transparent .mdl-layout__drawer-button {
-            /* This background is dark, so we set text to white. Use 87% black instead if
-     your background is light. */
-            color: white;
-        }
-    </style>
-
     <div class="demo-layout-transparent mdl-layout mdl-js-layout">
         <header class="mdl-layout__header mdl-layout__header--transparent">
             <div class="mdl-layout__header-row">
-                <!-- Title -->
                 <span class="mdl-layout-title">Restaurant La Belle Époque</span>
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-                <!-- Navigation -->
-                <nav class="mdl-navigation">
-                </nav>
             </div>
         </header>
         <div class="mdl-layout__drawer">
@@ -60,15 +39,13 @@
                         de votre enfance.</p>
                 </div>
                 <div class="mdl-cell mdl-cell--4-col">
-                    <!-- Image card -->
-
                     <div id="selectdiv1" class="demo-card-image mdl-card mdl-shadow--2dp">
                         <div class="mdl-card__title mdl-card--expand"></div>
                         <div class="mdl-card__actions">
-                            <!-- Select with floating label and arrow -->
                             <div
                                 class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select opaque">
-                                <input type="text" value="" class="mdl-textfield__input" id="sample4" onChange="chargerEntree(), updateTable()" readonly>
+                                <input type="text" value="" class="mdl-textfield__input" id="sample4"
+                                    onChange="chargerEntree(), updateTable()" readonly>
                                 <input type="hidden" value="" name="sample4">
                                 <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
                                 <label for="sample4" class="mdl-textfield__label">Entrée</label>
@@ -88,24 +65,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td id="nomEntree" class="mdl-data-table__cell--non-numeric">Salade de crevettes</td>
-                                <td id="prixEntree">$2.90</td>
+                                <td id="nomEntree" class="mdl-data-table__cell--non-numeric"></td>
+                                <td id="prixEntree"></td>
                             </tr>
                             <tr>
-                                <td id="nomRepas" class="mdl-data-table__cell--non-numeric">Hamburger steak</td>
-                                <td id="prixRepas">$1.25</td>
+                                <td id="nomRepas" class="mdl-data-table__cell--non-numeric"></td>
+                                <td id="prixRepas"></td>
                             </tr>
                             <tr>
                                 <td class="mdl-data-table__cell--non-numeric">Sous-total</td>
-                                <td id="sous-total">$2.35</td>
+                                <td id="sous-total"></td>
                             </tr>
                             <tr>
                                 <td class="mdl-data-table__cell--non-numeric">Taxes</td>
-                                <td id="taxes">$2.35</td>
+                                <td id="taxes"></td>
                             </tr>
                             <tr>
                                 <td class="mdl-data-table__cell--non-numeric">Total</td>
-                                <td id="total">$2.35</td>
+                                <td id="total"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -114,10 +91,10 @@
                     <div id="selectdiv2" class="demo-card-image mdl-card mdl-shadow--2dp">
                         <div class="mdl-card__title mdl-card--expand"></div>
                         <div class="mdl-card__actions">
-                            <!-- Select with floating label and arrow -->
                             <div
                                 class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select opaque">
-                                <input type="text" value="" class="mdl-textfield__input" id="sample5" onChange="chargerRepas(), updateTable()" readonly>
+                                <input type="text" value="" class="mdl-textfield__input" id="sample5"
+                                    onChange="chargerRepas(), updateTable()" readonly>
                                 <input type="hidden" value="" name="sample5">
                                 <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
                                 <label for="sample5" class="mdl-textfield__label">Repas</label>
@@ -145,132 +122,3 @@
 </body>
 
 </html>
-
-
-<!-- 
-    
-    PREVIOUS EXERCICES PRECEDING FINAL WORK
-    
-    <HTML>
-    <HEAD>
-     <TITLE>Voitures</TITLE>
-    </HEAD>
-    <SCRIPT LANGUAGE="JavaScript">
-    var tab = new Array(
-        "Audi", "BMW", "Cadillac", "Citroën", 
-        "Honda", "Infiniti", "Lexus", "Mercedes", 
-        "Peugeot", "Porsche", "Toyota",
-        "Volkswagen");
-
-    var tabQuebec = new Array("Québec", "Montréal", "Laval", "Sherbrooke");
-    var tabOntario = new Array("Ontario", "Ottawa", "Toronto", "Niagara Falls");
-    var tabColombie_Britannique = new Array("Colombie-Britannique", "Vancouver", "Victoria", "Tofino");
-    
-    var tab2 = new Array(tabQuebec, tabOntario, tabColombie_Britannique);
-
-    function chargerProvinces(){
-        var taille = tab2.length;
-        var elem = document.getElementById("provinces");
-        
-        var choixProvince = "Québec";
-        for (i = 0;i < taille;i++){
-            elem.options[i] = new Option(tab2[i][0]);
-            if (elem.options[i].text == choixProvince){
-                elem.options[i].selected = true;
-            }
-        }
-    }
-
-    function chargerVilles(){
-        
-        var taille = tab2.length;
-        var provinces = document.getElementById("provinces");
-        var province;
-        for (i = 0;i < taille; i++){
-            if (provinces.options[i].selected == true){
-                province = provinces.options[i].text;
-            }
-        }
-        var villeContainer = document.getElementById("listeVilles");
-       
-        switch(province){
-            case "Québec":
-            taille = tabQuebec.length;
-            var elem = document.getElementById("villes");
-            var choixVille = "Montréal";
-            for (i = 1;i < taille;i++){
-                elem.options[i - 1] = new Option(tabQuebec[i]);
-                if (elem.options[i - 1].text == choixVille){
-                    elem.options[i - 1].selected = true;
-                }
-            }
-            villeContainer.style.visibility = "visible";
-            break;
-            case "Ontario":
-            taille = tabOntario.length;
-            var elem = document.getElementById("villes");
-            var choixVille = "Ottawa";
-            for (i = 1;i < taille;i++){
-                elem.options[i - 1] = new Option(tabOntario[i]);
-                if (elem.options[i - 1].text == choixVille){
-                    elem.options[i - 1].selected = true;
-                }
-            }
-            villeContainer.style.visibility = "visible";
-            break;
-            case "Colombie-Britannique":
-            taille = tabQuebec.length;
-            var elem = document.getElementById("villes");
-            var choixVille = "Vancouver";
-            for (i = 1;i < taille;i++){
-                elem.options[i - 1] = new Option(tabColombie_Britannique[i]);
-                if (elem.options[i - 1].text == choixVille){
-                    elem.options[i - 1].selected = true;
-                }
-            }
-            villeContainer.style.visibility = "visible";
-
-            break;
-            default:;
-        }
-
-    }
-
-    function chargerVoitures() {
-        var taille = tab.length;
-        var elem = document.getElementById("voitures");
-        var choixSelection = "Audi";
-        for (i = 0;i < taille; i++){
-            elem.options[i] = new Option(tab[i]);
-            if (elem.options[i].text == choixSelection){
-                elem.options[i].selected = true;
-            }
-        }
-    }
-
-    function choix(elem){
-        var nbVoitures = elem.voitures.options.length;
-        choixVoitures = elem.voitures;
-        for (i = 0;i < nbVoitures;i++){
-            if (choixVoitures.options[i].selected){
-                return choixVoitures.options[i].text;
-            }
-        }
-    }
-    </SCRIPT>
-    <BODY onLoad="chargerVoitures(), chargerProvinces()">
-        <form id="listeVoitures" name="listeVoitures" action="" method="">
-
-          <label for="voitures">Choisissez une voiture</label>
-            <select id="voitures" name="voitures" onChange="alert(choix(document.listeVoitures));"></select>
-        </form>
-        <div id="listeProvinces">
-            <label>Choisissez une province</label>
-            <select id="provinces" name="provinces" onChange="chargerVilles()"></select>
-        </div>
-        <div id="listeVilles" style="visibility: collapse">
-            <label>Choisissez une ville</label>
-            <select id="villes" name="villes"></select>
-        </div>
-    </BODY>
-    </HTML>  -->

@@ -1,69 +1,76 @@
+/* CSS local pour les divs entrées et repas */
 
-            .demo-card-image.mdl-card {
-              width: 256px;
-              height: 256px;
-              background: url('../images/shrimps.jpg') center / cover;
-              margin:0 auto;
-            }
+.demo-card-image.mdl-card {
+    width: 256px;
+    height: 256px;
+    margin: 0 auto;
+}
 
-            #selectdiv1 {
-                background: url('../images/entrees.jpg') center / cover;
-                z-index:1;
-            }
+#selectdiv1 {
+    background: url('../images/entrees.jpg') center / cover;
+    z-index: 1;
+}
 
-            #selectdiv2 {
-                background: url('../images/burger.jpg') center / cover;
-                z-index:0;
-            }
+#selectdiv2 {
+    background: url('../images/burger.jpg') center / cover;
+    z-index: 0;
+}
 
-            .demo-card-image > .mdl-card__actions {
-              height: 80px;
-              padding: 16px;
-              background: rgba(255, 255, 255, 0.8);
-            }
-            .demo-card-image__filename {
-              color: #fff;
-              font-size: 14px;
-              font-weight: 500;
-            }
+.demo-card-image>.mdl-card__actions {
+    height: 80px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.8);
+}
 
-            #selectdiv1, #selectdiv2 {
-                overflow: visible;
-            }
+.demo-card-image__filename {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
 
-            .fondgris {
-                background-color: white;
-                opacity: 0.9;
-                text-align: center;
-                border-radius:10px;
-                padding:20px;
-            }
+#selectdiv1, #selectdiv2 {
+    overflow: visible;
+}
 
-            .centered {
-                margin:0 auto;
-            }
+/* CSS pour le titre et le message */
 
-            .facture {
-                margin:0 auto;
-            }
+.fondgris {
+    background-color: white;
+    opacity: 0.9;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+}
 
-            main {
-                display:flex;
-                align-items:center;
-                justify-content: center;
-                vertical-align: middle;
-                padding-top:40px;
-            }
+.centered, .facture, .message {
+    margin: 0 auto;
+}
 
-            .arrondi {
-                border-radius:20px;
-            }
+.arrondi {
+    border-radius: 20px;
+}
 
-            .message {
-                margin:0 auto;
-            }
+.divmessage {
+    padding-top: 30px;
+    text-align: center;
+}
 
-            .divmessage {
-                padding-top:30px;
-                text-align:center;
-            }
+/* mise en page générale */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding-top: 40px;
+}
+
+/* CSS MDL */
+
+.demo-layout-transparent {
+    background: url('../images/kitchen.jpg') center / cover;
+}
+
+.demo-layout-transparent .mdl-layout__header, .demo-layout-transparent .mdl-layout__drawer-button {
+    color: white;
+}
